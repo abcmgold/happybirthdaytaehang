@@ -18,13 +18,8 @@ export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
 
 
       useEffect(() => {
-        console.log(rest)
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const nameParam = urlParams.get("name");
-        if (nameParam !== null) {
+          console.log(rest)
           setName("Chúc mừng sinh nhật gái yêu!");
-        }
       }, [setName]);
 
       return (
