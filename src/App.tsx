@@ -15,50 +15,12 @@ import { CakeActions } from "./components/CakeActions";
 import { Name } from "./components/Name";
 import Joyride, { ACTIONS, CallBackProps } from "react-joyride";
 import lottieJson from '../public/assets/hbd.json'
+import lottieJson2 from '../public/assets/confetti.json'
 import Lottie from "react-lottie-player";
 // const version = import.meta.env.PACKAGE_VERSION;
 
 const src = new URL("/assets/hbd2.mp3", import.meta.url).href;
 
-const steps = [
-  {
-    target: "#name",
-    content: "This is the input to enter the name.",
-    placement: "bottom",
-    disableBeacon: true,
-  },
-  {
-    target: "#candle",
-    content: "Blow on the Lightning port to extinguish the candle.",
-    placement: "bottom",
-  },
-  {
-    target: "#start",
-    content: "Press start to play music and light the candle.",
-    placement: "top",
-  },
-  {
-    target: "#pause",
-    content: "Press pause if you want the music to pause temporarily.",
-    placement: "top",
-  },
-  {
-    target: "#stop",
-    content: "Press stop if you want to cancel temporarily.",
-    placement: "top",
-  },
-  {
-    target: "#toggle-candle",
-    content: "Press button if you want to light or blow out the candle.",
-    placement: "top",
-  },
-  {
-    target: "#share",
-    content: "Change the name and click 'Share' to send the gift to anyone.",
-    placement: "top",
-  },
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-] as any;
 
 const sharedSteps = [
   {
@@ -83,8 +45,6 @@ function App() {
 
   const [name, setName] = useState("");
   const nameRef = useRef<HTMLInputElement>(null);
-
-  const visibility = shareMode || playing
 
   const lightCandle = useCallback(() => setCandleVisible(true), []);
 
@@ -315,21 +275,15 @@ function App() {
       <div
         style={{
           position: "absolute",
-          top: "25%",
+          top: "40%",
           left: "50%",
           transform: "translateX(-50%)",
+          zIndex: 1000
         }}
       >
-        <dotlottie-player
-          src="/assets/confetti.lottie"
-          autoplay
-          loop
-          style={{
-            zIndex: 30,
-            visibility: visibility ? "visible" : "hidden",
-            width: 400,
-          }}
-        />
+        
+        <Lottie loop animationData={lottieJson2} play style={{ width: 600, height: 200 }} />;
+
       </div>
 
       <div
