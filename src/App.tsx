@@ -1,7 +1,7 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 import {
-  KeyboardEvent,
+  // KeyboardEvent,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -12,7 +12,6 @@ import "@dotlottie/player-component";
 import "./App.css";
 import { Cake } from "./components/Cake";
 import { CakeActions } from "./components/CakeActions";
-import { Name } from "./components/Name";
 import Joyride, { ACTIONS, CallBackProps } from "react-joyride";
 import lottieJson from '../public/assets/hbd.json'
 import lottieJson2 from '../public/assets/confetti.json'
@@ -82,7 +81,7 @@ function App() {
   const [run, setRun] = useState(false);
   const [shareMode, setShareMode] = useState(false);
 
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
   const nameRef = useRef<HTMLInputElement>(null);
 
   const lightCandle = useCallback(() => setCandleVisible(true), []);
@@ -172,13 +171,13 @@ function App() {
 
   const onEnded = useCallback(() => { }, []);
 
-  const onKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      setTimeout(() => {
-        nameRef.current ? nameRef.current.blur() : undefined;
-      }, 0);
-    }
-  };
+  // const onKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
+  //   if (event.key === "Enter") {
+  //     setTimeout(() => {
+  //       nameRef.current ? nameRef.current.blur() : undefined;
+  //     }, 0);
+  //   }
+  // };
 
   useEffect(() => {
     (async () => {
