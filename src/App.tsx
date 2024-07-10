@@ -33,6 +33,45 @@ const sharedSteps = [
 ] as any;
 
 function App() {
+  const steps = [
+    {
+      target: "#name",
+      content: "This is the input to enter the name.",
+      placement: "bottom",
+      disableBeacon: true,
+    },
+    {
+      target: "#candle",
+      content: "Blow on the Lightning port to extinguish the candle.",
+      placement: "bottom",
+    },
+    {
+      target: "#start",
+      content: "Press start to play music and light the candle.",
+      placement: "top",
+    },
+    {
+      target: "#pause",
+      content: "Press pause if you want the music to pause temporarily.",
+      placement: "top",
+    },
+    {
+      target: "#stop",
+      content: "Press stop if you want to cancel temporarily.",
+      placement: "top",
+    },
+    {
+      target: "#toggle-candle",
+      content: "Press button if you want to light or blow out the candle.",
+      placement: "top",
+    },
+    {
+      target: "#share",
+      content: "Change the name and click 'Share' to send the gift to anyone.",
+      placement: "top",
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ] as any;
   const [candleVisible, setCandleVisible] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement>(new Audio(src));
@@ -40,7 +79,7 @@ function App() {
 
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
-  const [run, setRun] = useState(true);
+  const [run, setRun] = useState(false);
   const [shareMode, setShareMode] = useState(false);
 
   const [name, setName] = useState("");
@@ -214,7 +253,7 @@ function App() {
         showProgress
         spotlightClicks
       />
-      {/* <Joyride
+      <Joyride
         styles={{
           options: {
             zIndex: !shareMode ? 10000 : -10000,
@@ -241,7 +280,7 @@ function App() {
         hideCloseButton
         showProgress
         spotlightClicks
-      /> */}
+      />
 
       <audio {...{ src, ref: audioRef, preload: "auto", onEnded }} />
 
