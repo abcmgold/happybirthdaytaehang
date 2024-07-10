@@ -285,7 +285,7 @@ function App() {
       <audio {...{ src, ref: audioRef, preload: "auto", onEnded }} />
 
       <div>
-        <Name
+        {/* <Name
           {...{
             ref: nameRef,
             name,
@@ -295,19 +295,19 @@ function App() {
             run,
             onKeyPress,
           }}
-        />
+        /> */}
         <Cake {...{ candleVisible }} />
       </div>
 
       <div
         style={{
           position: "absolute",
-          top: 0,
+          top: 200,
           left: "50%",
           transform: "translateX(-50%)",
         }}
       >
-      <Lottie loop animationData={lottieJson} play style={{ width: 600, height: 300 }} />;
+      <Lottie loop animationData={lottieJson} play style={{ width: 600, height: 300 }} />
          
       </div>
 
@@ -321,7 +321,7 @@ function App() {
         }}
       >
         
-        <Lottie loop animationData={lottieJson2} play style={{ width: 600, height: 200 }} />;
+        <Lottie loop animationData={lottieJson2} play style={{ width: 600, height: 200 }} />
 
       </div>
 
