@@ -14,7 +14,8 @@ import { Cake } from "./components/Cake";
 import { CakeActions } from "./components/CakeActions";
 import { Name } from "./components/Name";
 import Joyride, { ACTIONS, CallBackProps } from "react-joyride";
-
+import lottieJson from '../public/assets/hbd.json'
+import Lottie from "react-lottie-player";
 // const version = import.meta.env.PACKAGE_VERSION;
 
 const src = new URL("/assets/hbd2.mp3", import.meta.url).href;
@@ -223,6 +224,7 @@ function App() {
         justifyContent: "space-between",
         // border: "1px solid red",
       }}
+      className="bg"
     >
       <Joyride
         styles={{
@@ -252,7 +254,7 @@ function App() {
         showProgress
         spotlightClicks
       />
-      <Joyride
+      {/* <Joyride
         styles={{
           options: {
             zIndex: !shareMode ? 10000 : -10000,
@@ -279,7 +281,7 @@ function App() {
         hideCloseButton
         showProgress
         spotlightClicks
-      />
+      /> */}
 
       <audio {...{ src, ref: audioRef, preload: "auto", onEnded }} />
 
@@ -306,16 +308,8 @@ function App() {
           transform: "translateX(-50%)",
         }}
       >
-        <dotlottie-player
-          src="/assets/hbd.lottie"
-          autoplay
-          loop
-          style={{
-            zIndex: 20,
-            visibility: visibility ? "visible" : "hidden",
-            width: 400,
-          }}
-        />
+      <Lottie loop animationData={lottieJson} play style={{ width: 600, height: 300 }} />;
+         
       </div>
 
       <div

@@ -29,7 +29,7 @@ export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
         const urlParams = new URLSearchParams(queryString);
         const nameParam = urlParams.get("name");
         if (nameParam !== null) {
-          setName(nameParam);
+          setName("Chúc mừng sinh nhật gái yêu!");
         }
       }, [setName]);
 
@@ -46,19 +46,18 @@ export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
             zIndex: 40,
           }}
         >
-          <input
-            id="name"
-            {...{
-              ref,
-              style: {
-                fontFamily: "Montserrat",
-                fontWeight: "bold",
+          <div
+           
+              className =  "font"
+              style ={ {
+                // fontFamily: "Montserrat",
+                // fontWeight: "bold",
                 fontSize: "2rem",
                 color: "#f0e4d0",
                 opacity: 0.9,
                 border: 0,
                 outline: 0,
-                backgroundColor: "#000000",
+                // backgroundColor: "#000000",
                 width: 400,
                 ...(shareMode || playing
                   ? {
@@ -68,17 +67,9 @@ export const Name: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> =
                       display: name.length > 0 ? "block" : "none",
                     }
                   : {}),
-              },
-              value: name,
-              onChange,
-              disabled: shareMode || playing || run,
-              readOnly: shareMode || playing || run,
-              spellCheck: false,
-              autoFocus: true,
-              placeholder: "Enter your name",
-              ...rest,
-            }}
-          />
+              }}
+            
+          >{name}</div>
         </div>
       );
     }

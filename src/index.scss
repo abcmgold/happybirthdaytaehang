@@ -278,3 +278,16 @@ body {
       0 0 80px rgba(orange, 0.5);
   }
 }
+
+.bg {
+  background-image: url('./assets/images/anh.jpg');
+  background-size: "cover"; // Để hình ảnh phủ toàn bộ phần tử
+    background-position: "center";
+}
+
+.font {
+  font-family: "Playwrite HU", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
